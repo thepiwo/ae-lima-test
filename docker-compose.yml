@@ -1,0 +1,15 @@
+version: "3.6"
+
+services:
+  aeternity:
+    image: aeternity/aeternity:v5.0.0-rc.2
+    volumes:
+      - ./aeternity.yaml:/home/aeternity/.aeternity/aeternity/aeternity.yaml
+    ports:
+      - "3013:3013"
+      - "3113:3113"
+
+  compiler:
+    image: aeternity/aesophia_http:v4.0.0-rc4
+    ports:
+      - "3080:3080"
